@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Password Reset</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='fonts/material-icon/css/material-design-iconic-font.min.css') }}">
+        <!-- Main css -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    
+  </head>
+  <body>
+
+    <div class="main">
+      <section class="sign-in">
+          <div class="container" >
+                <h2 style='color: green;padding: 30px; '> Password Reset Successful </h2>
+                <p style='padding: 30px;'> Check your inbox for a link to reset your password</p>
+                <p id='pageInfo'></p>
+          </div>
+      </section>
+    </div>
+    
+  </body>
+  <script>
+    setTimeout(function(){
+       window.location.href = '/';
+    }, 5000);
+    document.getElementById("pageInfo").innerHTML="Redirecting to Home Page after "
++seconds+" seconds."
+ </script>
+</html>

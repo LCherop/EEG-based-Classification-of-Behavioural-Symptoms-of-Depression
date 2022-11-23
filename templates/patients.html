@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta>
+        <title>Depression Classifier</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/landing_style.css') }}">
+
+        <script src="https://kit.fontawesome.com/677fb179df.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a class="logo" href="#">
+                        <i class="fas fa-solid fa-brain"></i>
+                        <span class="nav-item">Neural</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-users"></i>
+                        <span class="nav-item">Patients</span>
+                    </a>
+                
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-solid fa-user-doctor"></i>
+                        <span class="nav-item">Profile</span>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="/logout" class="logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="nav-item">Log out</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="hero">
+            
+
+            <div id= "undiagnosed" class="tabcontent">
+                <h3>Upload Patient EEG Data</h3>
+                <p>Upload a patient file</p>
+
+                <form method='POST' action= "/uploader" enctype = "multipart/form-data">
+                    <input type= "file" name = "file"/>
+                    <input type= "submit"/>
+                </form>
+            </div>
+            
+            
+        </div>
+
+        
+    </body>
+</html>

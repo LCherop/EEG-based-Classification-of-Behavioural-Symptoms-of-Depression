@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    
+}
+
+
+body{
+    background: #dfe9f5;
+}
+
+nav{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    background: #fff;
+    width: 90px;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+a{
+    position: relative;
+    color: rgb(85, 83, 83);
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+    
+}
+.fas{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+.logo{
+    font-family: Helvetica,Arial,sans-serif;
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+    
+    background: linear-gradient(
+        to right, #5837D0,#5DA7DB,
+        #81C6E8,#7DE5ED
+            
+    );
+    
+}
+.logo i{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+.logo span{
+    font-weight: bold;
+    margin-left: 32px;
+    font-size: 18px;
+    text-transform: lowercase;
+   
+}
+.logo .fas{
+    color: #7DE5ED
+}
+.logo:hover{
+    background: #5DA7DB;
+}
+.nav-item{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+}
+a:hover{
+    background: #eee;
+}
+nav:hover{
+    width: 200px;
+    transition: all 0.5s ease;
+}
+.logout{
+    position: absolute;
+    bottom: 0;
+}
+.hero{
+    width: 80%;
+    height: 450px;
+    position: relative;
+    left: 200px;
+    top: 100px;
+    right: 100px auto;
+    overflow: hidden;
+}
+
+.tab{
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+.tab button{
+    background: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    margin-right: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.tab button:hover{
+    color: #5837D0;
+}
+.tab button.active{
+    background-color: #ccc;
+}
+.tabcontent{
+    display: flex;
+    padding: 6px 12px;
+    border-top: none;
+    justify-content: center;
+    align-items: center;
+    margin: 5% auto;
+    position: absolute;
+   
+}
+
+
+
