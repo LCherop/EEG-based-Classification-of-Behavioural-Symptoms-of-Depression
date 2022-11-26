@@ -10,6 +10,7 @@ from wtforms import FileField, SubmitField
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import  FileStorage
 import numpy as np
+from flask_fontawesome import FontAwesome
 
 
 
@@ -47,6 +48,10 @@ def home():
     return render_template('login.html')
 
 
+@app.route('/topredict')
+def topredictpage():
+    return render_template('predict.html')
+
 @app.route("/uploader",methods = ['GET','POST'])
 def upload_file():
     if request.method == 'POST':
@@ -60,7 +65,7 @@ def upload_file():
             #f.save(secure_filename(f.filename))
             fn_path = os.path.join(app.config['UPLOAD_FOLDER'],f.filename)
             f.save(fn_path)
-            return render_template('landing_page.html')
+            return render_template('predict.html')
 
 @app.route("/predict",methods = ['GET','POST'])
 def predict():
@@ -73,14 +78,14 @@ def predict():
         t = 'The patient has depression'
     else:
         t = 'The patient does not have depression'
-    return render_template("landing_page.html",output = t)
+    return render_template("predict.html",output = t)
             
      
 #Login route
 @app.route('/login', methods=['GET','POST'])
 def login():
     if('user' in session):
-        return render_template('landing_page.html')
+        return render_template('index.html')
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password')
@@ -89,7 +94,7 @@ def login():
             session['user'] = email
         except:
             return 'Failed to login'
-    return render_template('landing_page.html')
+    return render_template('index.html')
 
 
 @app.route('/logout')
@@ -110,6 +115,22 @@ def send_email():
         except:
             return make_response('Email is not registered')
     return render_template('wait.html')
+
+@app.route('/about')
+def aboutus():
+    return render_template('about.html')
+
+@app.route('/contact')
+def contactpage():
+    return render_template('contact.html')
+
+@app.route('/index')
+def toindex():
+    return render_template('index.html')
+
+@app.route('/profile')
+def toprofile():
+    return render_template('profile.html')
 
 
 
