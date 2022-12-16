@@ -1,3 +1,22 @@
 /*
 Custom Css
 */
+
+.form-submit{
+    display: inline-block;
+    background: white;
+    color: black;
+    border-bottom: none;
+    width: auto;
+    padding: 15px 39px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    margin-top: 25px;
+    text-decoration: none;
+    cursor: pointer; }
+    .form-submit:hover {
+      color: #59AB6E; 
+}

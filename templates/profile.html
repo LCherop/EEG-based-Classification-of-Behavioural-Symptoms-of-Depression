@@ -77,7 +77,7 @@ https://templatemo.com/tm-559-zay-shop
                         <a class="nav-link" href="/contact">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/profile">Profile</a>
+                        <a class="nav-link" href="/showProf">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">Logout</a>
@@ -100,11 +100,13 @@ https://templatemo.com/tm-559-zay-shop
         <div class="container">
             <div class="row align-items-center py-5">
                 <div class="col-md-8 text-white">
+                 
                     <h1>Profile</h1>
                     <div class="card mb-4 product-wap rounded-">
 
                         <div class="card">
                           <div class="card-body pt-3">
+                           
                             <!-- Bordered Tabs -->
                             <ul class="nav nav-tabs nav-tabs-bordered">
               
@@ -127,103 +129,76 @@ https://templatemo.com/tm-559-zay-shop
                               <div class="tab-pane fade show active profile-overview" id="profile-overview">
                                 
                                 <h5 class="card-title">Profile Details</h5>
-              
-                                <div class="row">
-                                  <div class="col-lg-3 col-md-4 label " style="color: #59AB6E;" >Full Name</div>
-                                  <div class="col-lg-9 col-md-8" style="color: black;" >Lisa Davids</div>
-                                </div>
-              
-                                <div class="row">
-                                  <div class="col-lg-3 col-md-4 label" style="color: #59AB6E;" >Company</div>
-                                  <div class="col-lg-9 col-md-8" style="color: black;" >Neural Clinic</div>
-                                </div>
-              
-                                <div class="row">
-                                  <div class="col-lg-3 col-md-4 label"style="color: #59AB6E;" >Job</div>
-                                  <div class="col-lg-9 col-md-8" style="color: black;" >Psychiatrist</div>
-                                </div>
-              
-                                <div class="row">
-                                  <div class="col-lg-3 col-md-4 label"style="color: #59AB6E;" >Country</div>
-                                  <div class="col-lg-9 col-md-8" style="color: black;">USA</div>
-                                </div>
-              
-                                <div class="row">
-                                  <div class="col-lg-3 col-md-4 label"style="color: #59AB6E;" >Address</div>
-                                  <div class="col-lg-9 col-md-8" style="color: black;" >A108 Adam Street, New York, NY 535022</div>
-                                </div>
-              
-                                <div class="row">
-                                  <div class="col-lg-3 col-md-4 label"style="color: #59AB6E;" >Phone</div>
-                                  <div class="col-lg-9 col-md-8" style="color: black;" >(436) 486-3538 x29071</div>
-                                </div>
-              
-                                <div class="row">
-                                  <div class="col-lg-3 col-md-4 label"style="color: #59AB6E;" >Email</div>
-                                  <div class="col-lg-9 col-md-8" style="color: black;" >lisadavids161@gmail.com</div>
-                                </div>
-              
+
+                                <form action = '/showProf' method = 'GET'>
+                                  
+                                  <div class="row">
+                                    <div class="col-lg-3 col-md-4 label " style="color: #59AB6E;" >Full Name</div>
+                                    <div class="col-lg-9 col-md-8" style="color: black;" id = "fname">
+                                      
+                                      {{fname}}
+                                    </div>
+                                  </div>
+                
+                                  <div class="row">
+                                    <div class="col-lg-3 col-md-4 label"style="color: #59AB6E;" >Address</div>
+                                    <div class="col-lg-9 col-md-8" style="color: black;" id = "addy" >
+                                      {{addy}}
+                                    
+                                    </div>
+                                  </div>
+                
+                                  <div class="row">
+                                    <div class="col-lg-3 col-md-4 label"style="color: #59AB6E;" >Phone</div>
+                                    <div class="col-lg-9 col-md-8" style="color: black;"id = "pnumber" >{{pnumber}}</div>
+                                  </div>
+                
+                                  <div class="row">
+                                    <div class="col-lg-3 col-md-4 label"style="color: #59AB6E;" >Email</div>
+                                    <div class="col-lg-9 col-md-8" style="color: black;" id = "email">{{email}}</div>
+                                  </div>
+                              </form>
+          
                               </div>
               
                               <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
               
                                 <!-- Profile Edit Form -->
-                                <form>
+                                <form action = "/updateProf" method = 'POST'>
                                   
               
                                   <div class="row mb-3">
                                     <label for="fullName" class="col-md-4 col-lg-3 col-form-label"style="color: #59AB6E;" >Full Name</label>
                                     <div class="col-md-8 col-lg-9">
-                                      <input name="fullName" type="text" class="form-control" id="fullName" value="Kevin Anderson">
+                                      <input name="fullName" type="text" class="form-control" id="fullName" >
                                     </div>
                                   </div>
-            
-              
-                                  <div class="row mb-3">
-                                    <label for="company" class="col-md-4 col-lg-3 col-form-label"style="color: #59AB6E;" >Company</label>
-                                    <div class="col-md-8 col-lg-9">
-                                      <input name="company" type="text" class="form-control" id="company" value="Lueilwitz, Wisoky and Leuschke">
-                                    </div>
-                                  </div>
-              
-                                  <div class="row mb-3">
-                                    <label for="Job" class="col-md-4 col-lg-3 col-form-label"style="color: #59AB6E;" >Job</label>
-                                    <div class="col-md-8 col-lg-9">
-                                      <input name="job" type="text" class="form-control" id="Job" value="Web Designer">
-                                    </div>
-                                  </div>
-              
-                                  <div class="row mb-3">
-                                    <label for="Country" class="col-md-4 col-lg-3 col-form-label"style="color: #59AB6E;" >Country</label>
-                                    <div class="col-md-8 col-lg-9">
-                                      <input name="country" type="text" class="form-control" id="Country" value="USA">
-                                    </div>
-                                  </div>
-              
+                                    
                                   <div class="row mb-3">
                                     <label for="Address" class="col-md-4 col-lg-3 col-form-label"style="color: #59AB6E;" >Address</label>
                                     <div class="col-md-8 col-lg-9">
-                                      <input name="address" type="text" class="form-control" id="Address" value="A108 Adam Street, New York, NY 535022">
+                                      <input name="address" type="text" class="form-control" id="address" >
                                     </div>
                                   </div>
               
                                   <div class="row mb-3">
                                     <label for="Phone" class="col-md-4 col-lg-3 col-form-label"style="color: #59AB6E;" >Phone</label>
                                     <div class="col-md-8 col-lg-9">
-                                      <input name="phone" type="text" class="form-control" id="Phone" value="(436) 486-3538 x29071">
+                                      <input name="phone" type="text" class="form-control" id="phone" >
                                     </div>
                                   </div>
               
                                   <div class="row mb-3">
                                     <label for="Email" class="col-md-4 col-lg-3 col-form-label"style="color: #59AB6E;" >Email</label>
                                     <div class="col-md-8 col-lg-9">
-                                      <input name="email" type="email" class="form-control" id="Email" value="k.anderson@example.com">
+                                      <input name="email_addy" type="email" class="form-control" id="email_addy" >
                                     </div>
                                   </div>
               
                                   <div class="text-center">
-                                    <button type="submit" class="btn btn-primary"style="background: #59AB6E;" >Save Changes</button>
-                                  </div>
+                                    <input type="submit" name="submit_prof" id="submit_prof" class="btn btn-primary" value="Save Changes" style="background: #59AB6E;">
+                                    </div>
+                                 
                                 </form><!-- End Profile Edit Form -->
               
                               </div>

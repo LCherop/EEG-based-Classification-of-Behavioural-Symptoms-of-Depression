@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/templatemo.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/custom.css') }}">
-
+   
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/fontawesome.min.css') }}">
@@ -100,14 +100,19 @@
                             <div class="container">
                                 <div class="signin-content">
                                     <div class="signin-form">
-                                        <h2 class="form-title">Upload Patient Data</h2>
-                                        <div id="before">
-                                            <form method='POST' action= "/uploader" enctype = "multipart/form-data">
-                                                <input type= "file" name = "file"/>
-                                                <input type= "submit"/>
-                                            </form>
+                                        <div id="after">
+                                            <h3>Your file has been uploaded successfully</h3>
+                                                <p>Click the button below to make a prediction</p>
+                                                <div class='last-last'>
+                                                    <a href = '/predict' class='form-submit'  > 
+                                                        Make Prediction
+                                                    </a>
+                                                </div>
+                                                
                                         </div>
-                                        
+                                        <div class='final'>
+                                            <h3 style='margin-top: 25px;'>{{output}}</h3>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

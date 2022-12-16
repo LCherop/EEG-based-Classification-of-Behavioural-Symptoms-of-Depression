@@ -25,11 +25,13 @@ config = {
     'messagingSenderId': "597961088303",
     'appId': "1:597961088303:web:0916129e5ee61e958a15da",
     'measurementId': "G-29W911PJMX",
-    'databaseURL': ''
+    'databaseURL': 'https://depression-classifier-default-rtdb.firebaseio.com/'
   }
 
 firebase =pyrebase.initialize_app(config)
+db = firebase.database()
 auth = firebase.auth()
+
 
 #Add a secret key that encrypts the cookies session code
 app.secret_key = 'secret'
@@ -65,7 +67,7 @@ def upload_file():
             #f.save(secure_filename(f.filename))
             fn_path = os.path.join(app.config['UPLOAD_FOLDER'],f.filename)
             f.save(fn_path)
-            return render_template('predict.html')
+            return render_template('result.html')
 
 @app.route("/predict",methods = ['GET','POST'])
 def predict():
@@ -78,7 +80,7 @@ def predict():
         t = 'The patient has depression'
     else:
         t = 'The patient does not have depression'
-    return render_template("predict.html",output = t)
+    return render_template("result.html",output = t)
             
      
 #Login route
@@ -112,6 +114,7 @@ def send_email():
         email = request.form.get('email')
         try:
             user = auth.send_password_reset_email(email)
+            
         except:
             return make_response('Email is not registered')
     return render_template('wait.html')
@@ -128,11 +131,48 @@ def contactpage():
 def toindex():
     return render_template('index.html')
 
-@app.route('/profile')
-def toprofile():
+
+@app.route('/showProf')
+def get_profile():
+    psy = db.child('Psychiatrist').child('-NJPwQLpo1oon4Dl36ri').get()
+    things = []
+    
+    for item in psy.each():
+        things.append({
+            item.key():item.val(),
+        })
+
+    return render_template('profile.html',
+                           fname = things[2]['Full_Name'],
+                           addy = things[0]['Address'],
+                           pnumber = things[3]['Phone'],
+                           email = things[1]['Email'])
+
+@app.route('/updateProf', methods = ['GET','POST'])
+def update_prof():
+    if request.method == 'GET':
+        return render_template('profile.html')
+    if request.method == 'POST':
+        fname2 = request.form['fullName']
+        addy2 = request.form['address']
+        pnumber2 = request.form['phone']
+        email2 = request.form['email_addy']
+        
+        try:
+            db.child('Psychiatrist').child('-NJPwQLpo1oon4Dl36ri').update({"Address":addy2})
+            db.child('Psychiatrist').child('-NJPwQLpo1oon4Dl36ri').update({"Email":email2})
+            db.child('Psychiatrist').child('-NJPwQLpo1oon4Dl36ri').update({"Full_Name":fname2})
+            db.child('Psychiatrist').child('-NJPwQLpo1oon4Dl36ri').update({"Phone":pnumber2})
+        except:
+            return make_response('Profile Update Failure')
+   
+        
     return render_template('profile.html')
+        
+        
+        
 
-
+        
 
 if __name__ == "__main__":
     
