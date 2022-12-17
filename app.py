@@ -19,13 +19,12 @@ app = Flask(__name__)
 config = {
     'apiKey': "AIzaSyCOo8XLTPqPUXifnsr_i5grdhtOrP7hiQk",
     'authDomain': "depression-classifier.firebaseapp.com",
-    'databaseURL': "https://depression-classifier-default-rtdb.firebaseio.com",
     'projectId': "depression-classifier",
     'storageBucket': "depression-classifier.appspot.com",
     'messagingSenderId': "597961088303",
     'appId': "1:597961088303:web:0916129e5ee61e958a15da",
     'measurementId': "G-29W911PJMX",
-    'databaseURL': 'https://depression-classifier-default-rtdb.firebaseio.com/'
+    'databaseURL': ''
   }
 
 firebase =pyrebase.initialize_app(config)
