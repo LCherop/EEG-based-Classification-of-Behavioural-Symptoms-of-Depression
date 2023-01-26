@@ -22,6 +22,7 @@ google-resumable-media
 googleapis-common-protos
 grpcio
 grpcio-status
+gunicorn
 httplib2
 idna
 importlib-metadata
