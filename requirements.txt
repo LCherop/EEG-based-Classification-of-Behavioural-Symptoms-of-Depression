@@ -14,7 +14,6 @@ entrypoints==0.3
 fasteners==0.14.1
 firebase-admin==6.0.1
 Flask==2.2.2
-folder-color-common==0.0.88
 future==0.18.2
 google-api-core==2.10.2
 google-api-python-client==1.7.11
