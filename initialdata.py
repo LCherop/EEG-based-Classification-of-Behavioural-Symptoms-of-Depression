@@ -18,11 +18,10 @@ config = {
 
 firebase =pyrebase.initialize_app(config)
 db = firebase.database()
-db.child('Psychiatrist').push({
-    "Full_Name":"Lisa Davids",
-    "Address":"A108 Adam Street, New York, NY 535022",
-    "Phone":"+12014222730",
-    "Email":"lisadavids161@gmail.com"})
+db.child('Prediction').push({
+    "Patient":"patient_0",
+    "Diagnosis":"Depressed",
+    })
 
 #dbref = db.reference('Psychiatrist')
 

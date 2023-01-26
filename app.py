@@ -73,13 +73,15 @@ def upload_file():
 def predict():
     X = np.loadtxt(f.filename,delimiter=',')
     
-    model = joblib.load("knn_model.pkl")
+    model = joblib.load("knn_model_ica.pkl")
     t =''
     prediction = model.predict([X])
     if prediction == [1]:
         t = 'The patient has depression'
     else:
         t = 'The patient does not have depression'
+        
+    
     return render_template("result.html",output = t)
             
      
@@ -167,7 +169,7 @@ def update_prof():
             return make_response('Profile Update Failure')
    
         
-    return render_template('profile.html')
+    return get_profile()
         
         
         
