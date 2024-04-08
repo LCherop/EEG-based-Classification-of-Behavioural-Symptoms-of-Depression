@@ -17,13 +17,13 @@ from flask_fontawesome import FontAwesome
 app = Flask(__name__)
 
 config = {
-    'apiKey': "AIzaSyCOo8XLTPqPUXifnsr_i5grdhtOrP7hiQk",
-    'authDomain': "depression-classifier.firebaseapp.com",
+    'apiKey': "XXX",
+    'authDomain': "XXX",
     'projectId': "depression-classifier",
-    'storageBucket': "depression-classifier.appspot.com",
-    'messagingSenderId': "597961088303",
-    'appId': "1:597961088303:web:0916129e5ee61e958a15da",
-    'measurementId': "G-29W911PJMX",
+    'storageBucket': "XXX",
+    'messagingSenderId': "XXX",
+    'appId': "XXX",
+    'measurementId': "XXX",
     'databaseURL': ''
   }
 
